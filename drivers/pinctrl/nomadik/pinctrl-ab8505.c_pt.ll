@@ -1,0 +1,155 @@
+; ModuleID = '/llk/IR/drivers/pinctrl/nomadik/pinctrl-ab8505.c_pt.bc'
+source_filename = "../drivers/pinctrl/nomadik/pinctrl-ab8505.c"
+target datalayout = "e-m:e-p:32:32-Fi8-i64:64-v128:64:128-a:0:32-n32-S64"
+target triple = "armv7-unknown-linux-gnueabi"
+
+module asm ".syntax unified"
+
+%struct.abx500_pinctrl_soc_data = type { ptr, i32, ptr, i32, ptr, i32, ptr, i32, ptr, ptr, i32, i32, i32, i32 }
+%struct.abx500_pinrange = type { i32, i32, i32 }
+%struct.pinctrl_pin_desc = type { i32, ptr, ptr }
+%struct.abx500_function = type { ptr, ptr, i32 }
+%struct.abx500_pingroup = type { ptr, ptr, i32, i32 }
+%struct.alternate_functions = type { i32, i8, i8, i8, i8, i8, i8 }
+%struct.abx500_gpio_irq_cluster = type { i32, i32, i32 }
+
+@ab8505_soc = internal global %struct.abx500_pinctrl_soc_data { ptr @ab8505_pinranges, i32 9, ptr @ab8505_pins, i32 17, ptr @ab8505_functions, i32 14, ptr @ab8505_groups, i32 35, ptr @ab8505_alternate_functions, ptr @ab8505_gpio_irq_cluster, i32 5, i32 40, i32 56, i32 1 }, align 4
+@ab8505_pinranges = internal constant [9 x %struct.abx500_pinrange] [%struct.abx500_pinrange { i32 1, i32 3, i32 1 }, %struct.abx500_pinrange { i32 10, i32 2, i32 0 }, %struct.abx500_pinrange { i32 13, i32 1, i32 0 }, %struct.abx500_pinrange { i32 14, i32 1, i32 1 }, %struct.abx500_pinrange { i32 17, i32 4, i32 1 }, %struct.abx500_pinrange { i32 34, i32 1, i32 1 }, %struct.abx500_pinrange { i32 40, i32 2, i32 1 }, %struct.abx500_pinrange { i32 50, i32 1, i32 0 }, %struct.abx500_pinrange { i32 52, i32 2, i32 1 }], align 4
+@ab8505_pins = internal constant [17 x %struct.pinctrl_pin_desc] [%struct.pinctrl_pin_desc { i32 1, ptr @.str, ptr null }, %struct.pinctrl_pin_desc { i32 2, ptr @.str.1, ptr null }, %struct.pinctrl_pin_desc { i32 3, ptr @.str.2, ptr null }, %struct.pinctrl_pin_desc { i32 10, ptr @.str.3, ptr null }, %struct.pinctrl_pin_desc { i32 11, ptr @.str.4, ptr null }, %struct.pinctrl_pin_desc { i32 13, ptr @.str.5, ptr null }, %struct.pinctrl_pin_desc { i32 14, ptr @.str.6, ptr null }, %struct.pinctrl_pin_desc { i32 17, ptr @.str.7, ptr null }, %struct.pinctrl_pin_desc { i32 18, ptr @.str.8, ptr null }, %struct.pinctrl_pin_desc { i32 19, ptr @.str.9, ptr null }, %struct.pinctrl_pin_desc { i32 20, ptr @.str.10, ptr null }, %struct.pinctrl_pin_desc { i32 34, ptr @.str.11, ptr null }, %struct.pinctrl_pin_desc { i32 40, ptr @.str.12, ptr null }, %struct.pinctrl_pin_desc { i32 41, ptr @.str.13, ptr null }, %struct.pinctrl_pin_desc { i32 50, ptr @.str.14, ptr null }, %struct.pinctrl_pin_desc { i32 52, ptr @.str.15, ptr null }, %struct.pinctrl_pin_desc { i32 53, ptr @.str.16, ptr null }], align 4
+@ab8505_functions = internal constant [14 x %struct.abx500_function] [%struct.abx500_function { ptr @.str.17, ptr @sysclkreq_groups, i32 3 }, %struct.abx500_function { ptr @.str.18, ptr @gpio_groups, i32 17 }, %struct.abx500_function { ptr @.str.19, ptr @pwmout_groups, i32 1 }, %struct.abx500_function { ptr @.str.20, ptr @adi2_groups, i32 1 }, %struct.abx500_function { ptr @.str.21, ptr @extcpena_groups, i32 1 }, %struct.abx500_function { ptr @.str.22, ptr @modsclsda_groups, i32 1 }, %struct.abx500_function { ptr @.str.23, ptr @resethw_groups, i32 1 }, %struct.abx500_function { ptr @.str.24, ptr @service_groups, i32 1 }, %struct.abx500_function { ptr @.str.25, ptr @hiqclkena_groups, i32 1 }, %struct.abx500_function { ptr @.str.26, ptr @pdm_groups, i32 2 }, %struct.abx500_function { ptr @.str.27, ptr @uartdata_groups, i32 2 }, %struct.abx500_function { ptr @.str.28, ptr @extvibra_groups, i32 2 }, %struct.abx500_function { ptr @.str.28, ptr @extvibra_groups, i32 2 }, %struct.abx500_function { ptr @.str.29, ptr @usbvdat_groups, i32 1 }], align 4
+@ab8505_groups = internal constant [35 x %struct.abx500_pingroup] [%struct.abx500_pingroup { ptr @.str.30, ptr @sysclkreq2_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.31, ptr @sysclkreq3_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.32, ptr @sysclkreq4_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.36, ptr @gpio10_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.37, ptr @gpio11_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.38, ptr @gpio13_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.50, ptr @pwmout1_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.51, ptr @adi2_d_1_pins, i32 4, i32 0 }, %struct.abx500_pingroup { ptr @.str.52, ptr @extcpena_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.53, ptr @modsclsda_d_1_pins, i32 2, i32 0 }, %struct.abx500_pingroup { ptr @.str.47, ptr @gpio50_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.54, ptr @resethw_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.55, ptr @service_d_1_pins, i32 1, i32 0 }, %struct.abx500_pingroup { ptr @.str.33, ptr @gpio1_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.34, ptr @gpio2_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.35, ptr @gpio3_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.56, ptr @hiqclkena_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.57, ptr @pdmclk_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.59, ptr @uarttxdata_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.39, ptr @gpio14_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.40, ptr @gpio17_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.41, ptr @gpio18_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.42, ptr @gpio19_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.43, ptr @gpio20_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.44, ptr @gpio34_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.45, ptr @gpio40_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.46, ptr @gpio41_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.60, ptr @uartrxdata_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.64, ptr @gpio50_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.48, ptr @gpio52_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.49, ptr @gpio53_a_1_pins, i32 1, i32 1 }, %struct.abx500_pingroup { ptr @.str.58, ptr @pdmdata_b_1_pins, i32 1, i32 2 }, %struct.abx500_pingroup { ptr @.str.61, ptr @extvibrapwm1_b_1_pins, i32 1, i32 2 }, %struct.abx500_pingroup { ptr @.str.62, ptr @extvibrapwm2_b_1_pins, i32 1, i32 2 }, %struct.abx500_pingroup { ptr @.str.63, ptr @usbvdat_c_1_pins, i32 1, i32 3 }], align 4
+@ab8505_alternate_functions = internal global [54 x %struct.alternate_functions] [%struct.alternate_functions { i32 0, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 1, i8 0, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 2, i8 1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 3, i8 2, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 4, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 5, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 6, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 7, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 8, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 9, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 10, i8 1, i8 0, i8 -1, i8 1, i8 0, i8 0 }, %struct.alternate_functions { i32 11, i8 2, i8 1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 12, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 13, i8 4, i8 3, i8 4, i8 1, i8 0, i8 2 }, %struct.alternate_functions { i32 14, i8 5, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 15, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 16, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 17, i8 0, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 18, i8 0, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 19, i8 0, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 20, i8 0, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 21, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 22, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 23, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 24, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 25, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 26, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 27, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 28, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 29, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 30, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 31, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 32, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 33, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 34, i8 1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 35, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 36, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 37, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 38, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 39, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 40, i8 7, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 41, i8 0, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 42, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 43, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 44, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 45, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 46, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 47, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 48, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 49, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 50, i8 1, i8 2, i8 -1, i8 1, i8 0, i8 0 }, %struct.alternate_functions { i32 51, i8 -1, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 52, i8 3, i8 -1, i8 -1, i8 0, i8 0, i8 0 }, %struct.alternate_functions { i32 53, i8 4, i8 -1, i8 -1, i8 0, i8 0, i8 0 }], align 4
+@ab8505_gpio_irq_cluster = internal global [5 x %struct.abx500_gpio_irq_cluster] [%struct.abx500_gpio_irq_cluster { i32 10, i32 11, i32 44 }, %struct.abx500_gpio_irq_cluster { i32 13, i32 13, i32 47 }, %struct.abx500_gpio_irq_cluster { i32 40, i32 41, i32 54 }, %struct.abx500_gpio_irq_cluster { i32 50, i32 50, i32 113 }, %struct.abx500_gpio_irq_cluster { i32 52, i32 53, i32 115 }], align 4
+@.str = private unnamed_addr constant [9 x i8] c"GPIO1_N4\00", align 1
+@.str.1 = private unnamed_addr constant [9 x i8] c"GPIO2_R5\00", align 1
+@.str.2 = private unnamed_addr constant [9 x i8] c"GPIO3_P5\00", align 1
+@.str.3 = private unnamed_addr constant [11 x i8] c"GPIO10_B16\00", align 1
+@.str.4 = private unnamed_addr constant [11 x i8] c"GPIO11_B17\00", align 1
+@.str.5 = private unnamed_addr constant [11 x i8] c"GPIO13_D17\00", align 1
+@.str.6 = private unnamed_addr constant [11 x i8] c"GPIO14_C16\00", align 1
+@.str.7 = private unnamed_addr constant [10 x i8] c"GPIO17_P2\00", align 1
+@.str.8 = private unnamed_addr constant [10 x i8] c"GPIO18_N3\00", align 1
+@.str.9 = private unnamed_addr constant [10 x i8] c"GPIO19_T1\00", align 1
+@.str.10 = private unnamed_addr constant [10 x i8] c"GPIO20_P3\00", align 1
+@.str.11 = private unnamed_addr constant [11 x i8] c"GPIO34_H14\00", align 1
+@.str.12 = private unnamed_addr constant [11 x i8] c"GPIO40_J15\00", align 1
+@.str.13 = private unnamed_addr constant [11 x i8] c"GPIO41_J14\00", align 1
+@.str.14 = private unnamed_addr constant [10 x i8] c"GPIO50_L4\00", align 1
+@.str.15 = private unnamed_addr constant [11 x i8] c"GPIO52_D16\00", align 1
+@.str.16 = private unnamed_addr constant [11 x i8] c"GPIO53_D15\00", align 1
+@.str.17 = private unnamed_addr constant [10 x i8] c"sysclkreq\00", align 1
+@sysclkreq_groups = internal constant [3 x ptr] [ptr @.str.30, ptr @.str.31, ptr @.str.32], align 4
+@.str.18 = private unnamed_addr constant [5 x i8] c"gpio\00", align 1
+@gpio_groups = internal constant [17 x ptr] [ptr @.str.33, ptr @.str.34, ptr @.str.35, ptr @.str.36, ptr @.str.37, ptr @.str.38, ptr @.str.39, ptr @.str.40, ptr @.str.41, ptr @.str.42, ptr @.str.43, ptr @.str.44, ptr @.str.45, ptr @.str.46, ptr @.str.47, ptr @.str.48, ptr @.str.49], align 4
+@.str.19 = private unnamed_addr constant [7 x i8] c"pwmout\00", align 1
+@pwmout_groups = internal constant [1 x ptr] [ptr @.str.50], align 4
+@.str.20 = private unnamed_addr constant [5 x i8] c"adi2\00", align 1
+@adi2_groups = internal constant [1 x ptr] [ptr @.str.51], align 4
+@.str.21 = private unnamed_addr constant [9 x i8] c"extcpena\00", align 1
+@extcpena_groups = internal constant [1 x ptr] [ptr @.str.52], align 4
+@.str.22 = private unnamed_addr constant [10 x i8] c"modsclsda\00", align 1
+@modsclsda_groups = internal constant [1 x ptr] [ptr @.str.53], align 4
+@.str.23 = private unnamed_addr constant [8 x i8] c"resethw\00", align 1
+@resethw_groups = internal constant [1 x ptr] [ptr @.str.54], align 4
+@.str.24 = private unnamed_addr constant [8 x i8] c"service\00", align 1
+@service_groups = internal constant [1 x ptr] [ptr @.str.55], align 4
+@.str.25 = private unnamed_addr constant [10 x i8] c"hiqclkena\00", align 1
+@hiqclkena_groups = internal constant [1 x ptr] [ptr @.str.56], align 4
+@.str.26 = private unnamed_addr constant [4 x i8] c"pdm\00", align 1
+@pdm_groups = internal constant [2 x ptr] [ptr @.str.57, ptr @.str.58], align 4
+@.str.27 = private unnamed_addr constant [9 x i8] c"uartdata\00", align 1
+@uartdata_groups = internal constant [2 x ptr] [ptr @.str.59, ptr @.str.60], align 4
+@.str.28 = private unnamed_addr constant [9 x i8] c"extvibra\00", align 1
+@extvibra_groups = internal constant [2 x ptr] [ptr @.str.61, ptr @.str.62], align 4
+@.str.29 = private unnamed_addr constant [8 x i8] c"usbvdat\00", align 1
+@usbvdat_groups = internal constant [1 x ptr] [ptr @.str.63], align 4
+@.str.30 = private unnamed_addr constant [15 x i8] c"sysclkreq2_d_1\00", align 1
+@.str.31 = private unnamed_addr constant [15 x i8] c"sysclkreq3_d_1\00", align 1
+@.str.32 = private unnamed_addr constant [15 x i8] c"sysclkreq4_d_1\00", align 1
+@.str.33 = private unnamed_addr constant [10 x i8] c"gpio1_a_1\00", align 1
+@.str.34 = private unnamed_addr constant [10 x i8] c"gpio2_a_1\00", align 1
+@.str.35 = private unnamed_addr constant [10 x i8] c"gpio3_a_1\00", align 1
+@.str.36 = private unnamed_addr constant [11 x i8] c"gpio10_d_1\00", align 1
+@.str.37 = private unnamed_addr constant [11 x i8] c"gpio11_d_1\00", align 1
+@.str.38 = private unnamed_addr constant [11 x i8] c"gpio13_d_1\00", align 1
+@.str.39 = private unnamed_addr constant [11 x i8] c"gpio14_a_1\00", align 1
+@.str.40 = private unnamed_addr constant [11 x i8] c"gpio17_a_1\00", align 1
+@.str.41 = private unnamed_addr constant [11 x i8] c"gpio18_a_1\00", align 1
+@.str.42 = private unnamed_addr constant [11 x i8] c"gpio19_a_1\00", align 1
+@.str.43 = private unnamed_addr constant [11 x i8] c"gpio20_a_1\00", align 1
+@.str.44 = private unnamed_addr constant [11 x i8] c"gpio34_a_1\00", align 1
+@.str.45 = private unnamed_addr constant [11 x i8] c"gpio40_a_1\00", align 1
+@.str.46 = private unnamed_addr constant [11 x i8] c"gpio41_a_1\00", align 1
+@.str.47 = private unnamed_addr constant [11 x i8] c"gpio50_d_1\00", align 1
+@.str.48 = private unnamed_addr constant [11 x i8] c"gpio52_a_1\00", align 1
+@.str.49 = private unnamed_addr constant [11 x i8] c"gpio53_a_1\00", align 1
+@.str.50 = private unnamed_addr constant [12 x i8] c"pwmout1_d_1\00", align 1
+@.str.51 = private unnamed_addr constant [9 x i8] c"adi2_d_1\00", align 1
+@.str.52 = private unnamed_addr constant [13 x i8] c"extcpena_d_1\00", align 1
+@.str.53 = private unnamed_addr constant [14 x i8] c"modsclsda_d_1\00", align 1
+@.str.54 = private unnamed_addr constant [12 x i8] c"resethw_d_1\00", align 1
+@.str.55 = private unnamed_addr constant [12 x i8] c"service_d_1\00", align 1
+@.str.56 = private unnamed_addr constant [14 x i8] c"hiqclkena_a_1\00", align 1
+@.str.57 = private unnamed_addr constant [11 x i8] c"pdmclk_a_1\00", align 1
+@.str.58 = private unnamed_addr constant [12 x i8] c"pdmdata_b_1\00", align 1
+@.str.59 = private unnamed_addr constant [15 x i8] c"uarttxdata_a_1\00", align 1
+@.str.60 = private unnamed_addr constant [15 x i8] c"uartrxdata_a_1\00", align 1
+@.str.61 = private unnamed_addr constant [17 x i8] c"extvibrapwm1_b_1\00", align 1
+@.str.62 = private unnamed_addr constant [17 x i8] c"extvibrapwm2_b_1\00", align 1
+@.str.63 = private unnamed_addr constant [12 x i8] c"usbvdat_c_1\00", align 1
+@sysclkreq2_d_1_pins = internal constant [1 x i32] [i32 1], align 4
+@sysclkreq3_d_1_pins = internal constant [1 x i32] [i32 2], align 4
+@sysclkreq4_d_1_pins = internal constant [1 x i32] [i32 3], align 4
+@gpio10_d_1_pins = internal constant [1 x i32] [i32 10], align 4
+@gpio11_d_1_pins = internal constant [1 x i32] [i32 11], align 4
+@gpio13_d_1_pins = internal constant [1 x i32] [i32 13], align 4
+@pwmout1_d_1_pins = internal constant [1 x i32] [i32 14], align 4
+@adi2_d_1_pins = internal constant [4 x i32] [i32 17, i32 18, i32 19, i32 20], align 4
+@extcpena_d_1_pins = internal constant [1 x i32] [i32 34], align 4
+@modsclsda_d_1_pins = internal constant [2 x i32] [i32 40, i32 41], align 4
+@gpio50_d_1_pins = internal constant [1 x i32] [i32 50], align 4
+@resethw_d_1_pins = internal constant [1 x i32] [i32 52], align 4
+@service_d_1_pins = internal constant [1 x i32] [i32 53], align 4
+@gpio1_a_1_pins = internal constant [1 x i32] [i32 1], align 4
+@gpio2_a_1_pins = internal constant [1 x i32] [i32 2], align 4
+@gpio3_a_1_pins = internal constant [1 x i32] [i32 3], align 4
+@hiqclkena_a_1_pins = internal constant [1 x i32] [i32 10], align 4
+@pdmclk_a_1_pins = internal constant [1 x i32] [i32 11], align 4
+@uarttxdata_a_1_pins = internal constant [1 x i32] [i32 13], align 4
+@gpio14_a_1_pins = internal constant [1 x i32] [i32 14], align 4
+@gpio17_a_1_pins = internal constant [1 x i32] [i32 17], align 4
+@gpio18_a_1_pins = internal constant [1 x i32] [i32 18], align 4
+@gpio19_a_1_pins = internal constant [1 x i32] [i32 19], align 4
+@gpio20_a_1_pins = internal constant [1 x i32] [i32 20], align 4
+@gpio34_a_1_pins = internal constant [1 x i32] [i32 34], align 4
+@gpio40_a_1_pins = internal constant [1 x i32] [i32 40], align 4
+@gpio41_a_1_pins = internal constant [1 x i32] [i32 41], align 4
+@uartrxdata_a_1_pins = internal constant [1 x i32] [i32 41], align 4
+@.str.64 = private unnamed_addr constant [11 x i8] c"gpio50_a_1\00", align 1
+@gpio50_a_1_pins = internal constant [1 x i32] [i32 50], align 4
+@gpio52_a_1_pins = internal constant [1 x i32] [i32 52], align 4
+@gpio53_a_1_pins = internal constant [1 x i32] [i32 53], align 4
+@pdmdata_b_1_pins = internal constant [1 x i32] [i32 10], align 4
+@extvibrapwm1_b_1_pins = internal constant [1 x i32] [i32 13], align 4
+@extvibrapwm2_b_1_pins = internal constant [1 x i32] [i32 50], align 4
+@usbvdat_c_1_pins = internal constant [1 x i32] [i32 13], align 4
+
+; Function Attrs: argmemonly mustprogress nofree norecurse nosync nounwind null_pointer_is_valid sspstrong willreturn writeonly uwtable(sync)
+define dso_local void @abx500_pinctrl_ab8505_init(ptr nocapture noundef writeonly %0) local_unnamed_addr #0 {
+  store ptr @ab8505_soc, ptr %0, align 4
+  ret void
+}
+
+attributes #0 = { argmemonly mustprogress nofree norecurse nosync nounwind null_pointer_is_valid sspstrong willreturn writeonly uwtable(sync) "frame-pointer"="none" "min-legal-vector-width"="0" "no-trapping-math"="true" "stack-protector-buffer-size"="8" "target-cpu"="generic" "target-features"="+armv7-a,+dsp,+read-tp-hard,+soft-float,-aes,-bf16,-d32,-dotprod,-fp-armv8,-fp-armv8d16,-fp-armv8d16sp,-fp-armv8sp,-fp16,-fp16fml,-fp64,-fpregs,-fullfp16,-mve,-mve.fp,-neon,-sha2,-thumb-mode,-vfp2,-vfp2sp,-vfp3,-vfp3d16,-vfp3d16sp,-vfp3sp,-vfp4,-vfp4d16,-vfp4d16sp,-vfp4sp" "use-soft-float"="true" "warn-stack-size"="1024" }
+
+!llvm.module.flags = !{!0, !1, !2, !3, !4, !5, !6}
+!llvm.ident = !{!7}
+
+!0 = !{i32 1, !"wchar_size", i32 2}
+!1 = !{i32 1, !"min_enum_size", i32 4}
+!2 = !{i32 8, !"branch-target-enforcement", i32 0}
+!3 = !{i32 8, !"sign-return-address", i32 0}
+!4 = !{i32 8, !"sign-return-address-all", i32 0}
+!5 = !{i32 8, !"sign-return-address-with-bkey", i32 0}
+!6 = !{i32 7, !"uwtable", i32 1}
+!7 = !{!"clang version 15.0.0 (/llk/llvm-project-main/clang 126a1f78513fb688819156df98cf7ea83b5e8c18)"}
